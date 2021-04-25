@@ -23,7 +23,7 @@
   footer {
     align-self: stretch;
 
-    &.empty {
+    &.empty .progress{
       opacity: 0.5;
     }
   }
@@ -101,6 +101,14 @@
     border: 0;
     font-size: 0;
     transition: 0.2s ease-in-out;
+
+    &.isActive {
+      filter: invert(0.35) sepia(1) saturate(3) hue-rotate(100deg);
+    }
+
+    &.isActive:hover {
+      filter: brightness(0.6) invert(0.35) sepia(1) saturate(3) hue-rotate(100deg);
+    }
     
     &.playButton {
       width: 4rem;
@@ -126,8 +134,12 @@
     }
 
     &:disabled {
-      cursor: default;
+      cursor: not-allowed;
       transform: none;
+      filter: none;
+      opacity: 0.5;
     }
+
+
   }
 }
